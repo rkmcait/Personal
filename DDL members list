@@ -1,0 +1,1 @@
+Get-Recipient -RecipientPreviewFilter (get-dynamicdistributiongroup all-Bangalore@synamedia.com).RecipientFilter -OrganizationalUnit $group.RecipientContainer Select Displayname | Export-Csv "C:\Test…
