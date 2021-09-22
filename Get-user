@@ -1,0 +1,21 @@
+#To get the complete user info
+
+# Get-User -Identity <User mail ID> 
+
+Get-user -Identity Smedapureddi@synamedia.com| Format-List
+
+#To get the report based on employee type
+# why we adding "ResultSize unlimited" The ResultSize parameter specifies the maximum number of results to return
+#if you not add it you will see first 1000 parameters
+
+
+Get-User -Filter "CustomAttribute5 -like 'Employee*'" -ResultSize unlimited |Select UserPrincipalName
+
+Get-User -Filter "CustomAttribute5 -like 'contingent*'" -ResultSize unlimited |Select UserPrincipalName
+
+
+# Get the report using user location wise
+#In you want to get more details about user, you can add attribute name after select
+#If you want to check the all attribute in you oarganization run "Get-user -Filter Help"
+
+Get-User -Filter "CustomAttribute1 -like 'India*'" -ResultSize unlimited |select UserPrincipalName,City,CountryOrRegion 
